@@ -1,0 +1,17 @@
+#art_atractores {
+    display: block;
+    text-align: center;
+}
+
+#canvas_atractores {
+    text-align: center;
+    margin: 2rem;
+    border: 2px white solid;
+}
+
+#descripcion_atractores {
+    font-size: 18px;
+    justify-self: center;
+    text-align: center;
+    width: 800px;
+}

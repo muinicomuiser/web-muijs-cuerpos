@@ -1,0 +1,6 @@
+services:
+  atractor:
+    image: muinidoconeg/muijsweb:0.1.0
+    container_name: muijsweb
+    ports:
+      - 80:80

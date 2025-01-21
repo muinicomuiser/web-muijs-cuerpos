@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+h1 {
+    margin: 1rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: yellow;
+}
+
+a:visited {
+    color: white;
+}
