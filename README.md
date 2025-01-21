@@ -1,4 +1,29 @@
-# WebMuijs
+<p align="center">
+  <!-- <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a> -->
+  <img src="Penates01.png"  width="450" alt="mui.js"/>
+</p>
+
+
+## Web mui.js - cuerpos
+Desarrollo de la web para documentar y ejemplificar la librería [mui.js - cuerpos](https://github.com/muinicomuiser/muijs-cuerpos/tree/main)        
+
+### [Link a la web](http://54.160.132.98)
+
+__'mui.js - cuerpos'__ es un motor para simular y graficar interacciones entre cuerpos rígidos.   
+Hasta el momento permite:   
+- crear y dibujar figuras geométricas     
+- crear cuerpos con formas geométricas      
+- mover y acelerar cuerpos      
+- detectar colisiones entre cuerpos y con cuerpos contenedores      
+- crear cuerpos atractores y repulsores    
+- crear cuadrículas y pintar sus celdas según su estado 
+- incorporar controles y eventos con mouse y teclado
+- choque elástico entre circunferencias
+- grabar canvas
+- control de tick y fps
+- calcular colisiones con quadtree  
+
+# Este proyecto usa Angular
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.7.
 
