@@ -1,0 +1,21 @@
+#art_rebote_contenedor {
+    display: block;
+    text-align: center;
+}
+
+#art_rebote_contenedor h2 {
+    margin-top: 2rem;
+}
+
+#canvas_rebote_contenedor {
+    text-align: center;
+    margin: 2rem;
+    border: 2px white solid;
+}
+
+#descripcion_rebote_contenedor {
+    font-size: 18px;
+    justify-self: center;
+    text-align: left;
+    width: 1080px;
+}

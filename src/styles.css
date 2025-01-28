@@ -1,10 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --background-color: black;
+    --letter-color: white;
+    --accent-color: #2ae4f1;
+    --shadow-color: #E8E8E8;
+}
+
 body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     background-color: black;
-    color: white;
+    color: var(--letter-color);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
@@ -13,13 +20,15 @@ h1 {
 }
 
 a {
+    color: var(--letter-color);
     text-decoration: none;
+    list-style: none;
 }
 
 a:hover {
-    color: yellow;
+    color: var(--accent-color);
 }
 
 a:visited {
-    color: white;
+    color: var(--letter-color);
 }

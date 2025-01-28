@@ -1,4 +1,16 @@
-ul {
-    font-size: 24px;
-    text-decoration: underline;
+.ejemplos {
+    padding-top: 2rem;
+    font-size: 18px;
+}
+
+.ejemplos-links {
+    gap: 1rem;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+}
+
+.ejemplos-link {
+    padding: 8px;
+    border: 2px solid var(--letter-color);
 }
