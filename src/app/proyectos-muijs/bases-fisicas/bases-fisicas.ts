@@ -80,7 +80,7 @@ export class AtractorRebote {
 
         //Frontera del canvas
         const Frontera: Entorno = Entorno.crearEntornoCanvas(this.composicion.dibujante.canvas);
-        Frontera.cuerpo.estiloGrafico = { colorTrazo: 'white', grosorTrazo: 4 }
+        // Frontera.cuerpo.estiloGrafico = { colorTrazo: 'white', grosorTrazo: 4 }
         this.composicion.usarfpsNativos = true;
         this.composicion.tick = 10
         this.composicion.animacion(

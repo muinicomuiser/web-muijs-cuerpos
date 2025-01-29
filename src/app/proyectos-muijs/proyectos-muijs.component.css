@@ -1,16 +1,20 @@
 .ejemplos {
-    padding-top: 2rem;
+    position: fixed;
+    /* padding-top: 2rem; */
     font-size: 18px;
+    align-self: center;
+    top: 0vh;
+    bottom: 0vh;
 }
 
 .ejemplos-links {
-    gap: 1rem;
+    /* gap: 1rem; */
     display: flex;
     flex-flow: column;
-    align-items: flex-start;
+    align-items: stretch;
 }
 
 .ejemplos-link {
-    padding: 8px;
-    border: 2px solid var(--letter-color);
+    padding: 10px 30px;
+    border: 1px solid var(--letter-color);
 }

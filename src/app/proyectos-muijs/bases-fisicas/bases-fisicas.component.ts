@@ -1,16 +1,20 @@
 import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import { AtractorRebote } from './bases-fisicas';
+import { ProyectosMuijsComponent } from '../proyectos-muijs.component';
 @Component({
   selector: 'app-bases-fisicas',
-  imports: [],
+  imports: [ProyectosMuijsComponent],
   template: `
-  <article id="art_rebote">
-    <h2>Partículas atraídas y rebotadas</h2>
-    <canvas id="canvas_rebote" (click)="pausar()" ></canvas>
-    <p id="descripcion_rebote"  [innerHTML]="descripcion"></p>
+  <article class="proyecto">
+    <app-proyectos-muijs></app-proyectos-muijs>
+    <div class="contenido">
+      <h2>Partículas atraídas y rebotadas</h2>
+      <canvas id="canvas_rebote" class="canvas_proyecto" (click)="pausar()" ></canvas>
+      <p class="descripcion_proyecto"  [innerHTML]="descripcion"></p>
+    </div>
   </article>
   `,
-  styleUrl: './bases-fisicas.component.css'
+  styleUrls: ['./bases-fisicas.component.css', '../proyecto.css']
 })
 export class BasesFisicasComponent implements AfterViewInit, OnDestroy {
   atractorRebote?: AtractorRebote;

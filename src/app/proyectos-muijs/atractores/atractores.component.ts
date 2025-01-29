@@ -1,15 +1,20 @@
 import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import { Atractores } from './atractores';
+import { ProyectosMuijsComponent } from '../proyectos-muijs.component';
 @Component({
+  imports: [ProyectosMuijsComponent],
   selector: 'app-atractores',
   template: `
-  <article id="art_atractores">
-        <h2>Atractores y figuras que les orbitan</h2>
-    <p id="descripcion_atractores">{{descripcion}}</p>
-    <canvas id="canvas_atractores" (click)="pausar()" ></canvas>
+  <article class="proyecto">
+    <app-proyectos-muijs></app-proyectos-muijs>
+    <div class="contenido">
+      <h2>Atractores y figuras que les orbitan</h2>
+      <p class="descripcion_proyecto">{{descripcion}}</p>
+      <canvas id="canvas_atractores" class="canvas_proyecto" (click)="pausar()" ></canvas>
+    </div>
   </article>
   `,
-  styleUrls: ['./atractores.component.css']
+  styleUrls: ['./atractores.component.css', '../proyecto.css']
 })
 
 export class AtractoresComponent implements AfterViewInit, OnDestroy {

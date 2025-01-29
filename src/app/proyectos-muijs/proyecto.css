@@ -1,0 +1,22 @@
+.proyecto {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+    padding-top: 30px;
+    outline: 2px green solid;
+    padding-bottom: 5rem;
+}
+
+.canvas_proyecto {
+    text-align: center;
+    margin: 2rem;
+    border: 2px white solid;
+}
+
+.descripcion_proyecto {
+    font-size: 18px;
+    justify-self: center;
+    text-align: justify;
+    max-width: 1080px;
+}

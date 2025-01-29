@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "image:build": "docker build -t muinidoconeg/muijsweb:0.1.0 .",
+    "image:build": "docker build -t muinidoconeg/muijsweb:0.2.0 .",
     "image:push": "docker push muinidoconeg/muijsweb:0.1.0"
   },
   "private": true,

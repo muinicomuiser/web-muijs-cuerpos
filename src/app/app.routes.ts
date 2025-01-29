@@ -13,11 +13,11 @@ export const routes: Routes = [
         component: HomeComponent,
         title: `MUI.JS`
     },
-    {
-        path: `ejemplos`,
-        component: ProyectosMuijsComponent,
-        title: `MUI.JS - Ejemplos`
-    },
+    // {
+    //     path: `ejemplos/atractores`,
+    //     component: AtractoresComponent,
+    //     title: `MUI.JS - Ejemplos`
+    // },
     {
         path: `ejemplos/atractores`, // Ruta vacía para que sea el home
         component: AtractoresComponent,

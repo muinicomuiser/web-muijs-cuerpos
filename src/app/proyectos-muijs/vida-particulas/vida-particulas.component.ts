@@ -1,15 +1,20 @@
 import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import { VidaParticulas } from './vida-particulas';
+import { ProyectosMuijsComponent } from '../proyectos-muijs.component';
 @Component({
   selector: 'app-vida-particulas',
+  imports: [ProyectosMuijsComponent],
   template: `
-  <article id="art_particulas">
-    <h2>Partículas que parecen vivas</h2>
-    <canvas id="canvas_particulas" (click)="pausar()"></canvas>
-    <p id="descripcion_particulas" [innerHTML]="descripcion" ></p>
+  <article class="proyecto">
+    <app-proyectos-muijs></app-proyectos-muijs>
+    <div class="contenido">
+      <h2>Partículas que parecen vivas</h2>
+      <canvas id="canvas_particulas" class="canvas_proyecto"(click)="pausar()"></canvas>
+      <p class="descripcion_proyecto" [innerHTML]="descripcion" ></p>
+    </div>
   </article>
   `,
-  styleUrls: ['./vida-particulas.component.css']
+  styleUrls: ['./vida-particulas.component.css', '../proyecto.css']
 })
 
 export class VidaParticulasComponent implements AfterViewInit, OnDestroy {

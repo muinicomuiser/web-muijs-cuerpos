@@ -9,9 +9,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     <header>
       <app-navbar></app-navbar>
     </header>
-  <body>
+  <body id="content">
     <main>
-      <section id="seccion">
+      <section>
         <router-outlet></router-outlet>
       </section>
     </main>

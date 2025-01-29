@@ -1,17 +1,21 @@
 import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import { ReboteContenedor } from './01-rebote-entorno';
+import { ProyectosMuijsComponent } from '../proyectos-muijs.component';
 
 @Component({
   selector: 'app-rebote-contenedor',
-  imports: [],
+  imports: [ProyectosMuijsComponent],
   template: `
-  <article id="art_rebote_contenedor">
-    <h2>Rebote</h2>
-    <canvas id="canvas_rebote_contenedor" (click)="pausar()"></canvas>
-    <p id="descripcion_rebote_contenedor" [innerHTML]="descripcion" ></p>
+  <article class="proyecto">
+    <app-proyectos-muijs></app-proyectos-muijs>
+    <div class="contenido">
+      <h2>Rebote y contenedor</h2>
+      <canvas id="canvas_rebote_contenedor" class="canvas_proyecto" (click)="pausar()"></canvas>
+      <p class="descripcion_proyecto" [innerHTML]="descripcion" ></p>
+    </div>
   </article>
   `,
-  styleUrl: './rebote-contenedor.component.css'
+  styleUrls: ['./rebote-contenedor.component.css', '../proyecto.css']
 })
 
 export class ReboteContenedorComponent implements AfterViewInit, OnDestroy {
@@ -32,8 +36,8 @@ export class ReboteContenedorComponent implements AfterViewInit, OnDestroy {
     this.reboteContenedor!.pausar()
   }
 
-  descripcion: string = `Conjunto de partículas instruídas para relacionarse entre sí de modos distintos según su tipo `
+  descripcion: string = `Conjunto de cuerpos atrapados en un contenedor, que son atraídas por un objeto que les orbita.`
     + `<br\>`
-    + `Dependiendo de cómo se configuren las interacciones entre partículas, pueden emerger espontáneamente comportamientos que hagan que grupos de partículas parezcan organismos vivos.`
+  // + `Dependiendo de cómo se configuren las interacciones entre partículas, pueden emerger espontáneamente comportamientos que hagan que grupos de partículas parezcan organismos vivos.`
 }
 

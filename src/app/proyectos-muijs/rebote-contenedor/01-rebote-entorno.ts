@@ -1,4 +1,4 @@
-import { Composicion, Dibujante, Contenedor, Cuerpo, Forma, Entorno, Fuerza } from "muijs-cuerpos";
+import { Composicion, Dibujante, Contenedor, Cuerpo, Forma, Entorno, Fuerza, Matematica } from "muijs-cuerpos";
 
 export class ReboteContenedor {
     composicion!: Composicion;
@@ -35,20 +35,26 @@ export class ReboteContenedor {
         this.composicion.colorCanvas = this.colorCanvas;
 
         //Contenedor
-        const RADIOCONTENEDOR: number = 150;
+        const RADIOCONTENEDOR: number = 180;
         const contenedor: Contenedor = Contenedor.crearContenedor(Cuerpo.circunferencia(this.composicion.centroCanvas.x, this.composicion.centroCanvas.y, RADIOCONTENEDOR));
         contenedor.cuerpo.estiloGrafico = {
-            colorTrazo: 'white'
+            colorTrazo: 'white',
+            colorRelleno: 'white'
         }
         //Cuerpos
-        const NUMEROCUERPOS: number = 20;
-        const RADIOCUERPOS: number = 8;
+        const NUMEROCUERPOS: number = 30;
+        const RADIOCUERPOS: number = 10;
         const cuerpos: Cuerpo[] = [];
-        const formaGeneradora: Forma = Forma.poligono(this.composicion.centroCanvas.x, this.composicion.centroCanvas.y, NUMEROCUERPOS, 100)
+        const formaGeneradora: Forma = Forma.poligono(this.composicion.centroCanvas.x, this.composicion.centroCanvas.y, NUMEROCUERPOS, 150)
         formaGeneradora.verticesTransformados.forEach((vertice) => {
-            cuerpos.push(Cuerpo.circunferencia(vertice.x, vertice.y, RADIOCUERPOS))
+            let cuerpoCreado: Cuerpo = Cuerpo.circunferencia(vertice.x, vertice.y, RADIOCUERPOS);
+            cuerpoCreado.estiloGrafico = {
+                colorRelleno: Dibujante.colorHSL(Matematica.aleatorioEntero(0, 360), 100, 50),
+                colorTrazo: 'white',
+                trazada: false
+            }
+            cuerpos.push(cuerpoCreado)
         })
-        cuerpos.forEach((cuerpo) => cuerpo.colorTrazo = 'white')
         this.composicion.agregarCuerpos(...cuerpos)
         contenedor.agregarCuerposContenidos(...cuerpos)
 
@@ -57,19 +63,23 @@ export class ReboteContenedor {
         entorno.agregarCuerposContenidos(contenedor.cuerpo);
 
         //Gravedad
-        const atractorGravedad: Cuerpo = Cuerpo.circunferencia(this.composicion.centroCanvas.x, 50, 20);
-        atractorGravedad.colorTrazo = 'white'
+        const atractorGravedad: Cuerpo = Cuerpo.circunferencia(this.composicion.centroCanvas.x, 50, 10);
+        atractorGravedad.estiloGrafico = {
+            colorRelleno: 'white',
+            rellenada: true,
+            trazada: false
+        }
         contenedor.cuerpo.fijo = false
         this.composicion.animacion(
             () => {
                 cuerpos.forEach((cuerpo) => {
-                    cuerpo.aceleracion = Fuerza.atraer(cuerpo, atractorGravedad, 0.0005)
-                    cuerpo.velocidad = cuerpo.velocidad.escalar(0.99)
-                    contenedor.cuerpo.aceleracion = Fuerza.atraer(contenedor.cuerpo, atractorGravedad, 0.1)
-                    contenedor.cuerpo.velocidad = contenedor.cuerpo.velocidad.escalar(0.99)
+                    cuerpo.aceleracion = Fuerza.atraer(cuerpo, atractorGravedad, 0.001)
+                    cuerpo.velocidad = cuerpo.velocidad.escalar(0.93)
+                    // contenedor.cuerpo.aceleracion = Fuerza.atraer(contenedor.cuerpo, atractorGravedad, 0.1)
+                    // contenedor.cuerpo.velocidad = contenedor.cuerpo.velocidad.escalar(0.99)
                     // contenedor.mover()
                     // entorno.rebotarCircunferenciasConBorde()
-                    atractorGravedad.rotarSegunPunto(this.composicion.dibujante.centroCanvas, 0.002)
+                    atractorGravedad.rotarSegunPunto(this.composicion.dibujante.centroCanvas, 0.001)
                     // entorno.cuerpo.rotar(0.01)
                     this.composicion.reboteElasticoCuerpos()
                     contenedor.rebotarCircunferenciasConBorde()
@@ -77,8 +87,8 @@ export class ReboteContenedor {
                 })
             },
             () => {
-                this.composicion.dibujante.limpiarCanvas(0.8)
-                this.composicion.dibujante.trazar(atractorGravedad)
+                this.composicion.dibujante.limpiarCanvas(0.9)
+                this.composicion.dibujante.dibujar(atractorGravedad)
                 this.composicion.dibujante.trazar(contenedor.cuerpo)
                 this.composicion.dibujante.trazar(entorno.cuerpo)
                 this.composicion.dibujarCuerpos();
