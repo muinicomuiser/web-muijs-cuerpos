@@ -27,6 +27,7 @@ export class VidaParticulasComponent implements AfterViewInit, OnDestroy {
     this.vidaParticulas.ejecutar()
   }
   ngOnDestroy() {
+    this.vidaParticulas?.composicion.cancelarAnimacion()
     this.vidaParticulas!.composicion.animar = false
     delete this.vidaParticulas;
   }

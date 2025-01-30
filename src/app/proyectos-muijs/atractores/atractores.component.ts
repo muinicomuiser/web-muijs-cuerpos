@@ -27,7 +27,8 @@ export class AtractoresComponent implements AfterViewInit, OnDestroy {
     this.atractores.ejecutar()
   }
   ngOnDestroy() {
-    this.atractores!.composicion.animar = false
+    this.atractores?.composicion.cancelarAnimacion()
+    this.atractores!.composicion.animar = false;
     delete this.atractores;
   }
 

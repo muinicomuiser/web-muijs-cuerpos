@@ -28,7 +28,8 @@ export class ReboteContenedorComponent implements AfterViewInit, OnDestroy {
     this.reboteContenedor.ejecutar()
   }
   ngOnDestroy() {
-    this.reboteContenedor!.composicion.animar = false
+    this.reboteContenedor?.composicion.cancelarAnimacion();
+    this.reboteContenedor!.composicion.animar = false;
     delete this.reboteContenedor;
   }
 

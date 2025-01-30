@@ -9,7 +9,7 @@ import { ProyectosMuijsComponent } from '../proyectos-muijs.component';
     <app-proyectos-muijs></app-proyectos-muijs>
     <div class="contenido">
       <h2>Partículas atraídas y rebotadas</h2>
-      <canvas id="canvas_rebote" class="canvas_proyecto" (click)="pausar()" ></canvas>
+      <canvas id="canvas_rebote" class="canvas_proyecto" ></canvas>
       <p class="descripcion_proyecto"  [innerHTML]="descripcion"></p>
     </div>
   </article>
@@ -26,7 +26,8 @@ export class BasesFisicasComponent implements AfterViewInit, OnDestroy {
     this.atractorRebote.ejecutar()
   }
   ngOnDestroy() {
-    this.atractorRebote!.composicion.animar = false
+    this.atractorRebote?.composicion.cancelarAnimacion();
+    this.atractorRebote!.composicion.animar = false;
     delete this.atractorRebote;
   }
 
