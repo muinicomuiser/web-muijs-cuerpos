@@ -5,9 +5,9 @@
     align-items: center;
     padding: 0 1rem;
     font-size: 18px;
-    /* outline: 2px solid red; */
 }
 
+/* Tíyulo Muijs-cuerpos */
 .navbar .logo {
     margin-right: auto;
     flex-shrink: 0;
@@ -17,12 +17,21 @@
     color: var(--letter-color);
 }
 
+/* Links del navbar */
 .navbar .nav-links {
     flex-shrink: 1;
     display: flex;
     justify-content: right;
+    align-items: center;
     flex-flow: row nowrap;
     gap: 2rem;
     padding-right: 1rem;
     list-style: none;
+}
+
+/* Icono github */
+.nav-link.github-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
