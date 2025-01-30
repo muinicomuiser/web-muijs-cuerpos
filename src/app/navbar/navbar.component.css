@@ -5,11 +5,12 @@
     align-items: center;
     padding: 0 1rem;
     font-size: 18px;
-    outline: 2px solid red;
+    /* outline: 2px solid red; */
 }
 
 .navbar .logo {
     margin-right: auto;
+    flex-shrink: 0;
 }
 
 .navbar .logo a:hover {
@@ -17,9 +18,10 @@
 }
 
 .navbar .nav-links {
+    flex-shrink: 1;
     display: flex;
     justify-content: right;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     gap: 2rem;
     padding-right: 1rem;
     list-style: none;
