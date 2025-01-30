@@ -11,9 +11,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     </header>
   <body id="content">
     <main>
-      <section>
+      <!-- <section> -->
         <router-outlet></router-outlet>
-      </section>
+      <!-- </section> -->
     </main>
   </body>
   `,

@@ -8,7 +8,7 @@
 
 header {
     display: flexbox;
-    outline: 2px solid green;
+    /* outline: 2px solid green; */
     top: 0;
     left: 0;
     right: 0;
@@ -24,21 +24,21 @@ body {
     background-color: black;
     color: var(--letter-color);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-#content {
     position: relative;
     display: flexbox;
     justify-content: center;
-    top: 60px;
+    top: 30px;
     /* Adjust this value to match the height of your header */
     /* Adjust this value to match the width of your sidebar */
     right: 0;
     bottom: 0;
     overflow-y: auto;
     z-index: 999;
-    /* Ensure the content is above the sidebar */
 }
+
+/* Ensure the content is above the sidebar */
+/* #content {
+} */
 
 h1 {
     padding-left: 1rem;

@@ -1,4 +1,27 @@
 .home {
     display: flex;
+    padding-top: 30px;
+    /* padding-bottom: 20rem; */
     justify-content: center;
+    height: 80vh;
+    align-items: center;
+}
+
+.anuncio_container {
+    font-size: 18px;
+    border: 2px white solid;
+    border-radius: 15px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.canvas_home_container {
+    /* width: 100vw; */
+    /* align-self: flex-start; */
+    /* margin-top: -60px; */
+    /* outline: 2px red solid; */
+    z-index: -1;
+    position: fixed;
+    justify-content: center;
+    opacity: 40%;
 }
