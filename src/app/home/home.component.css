@@ -7,13 +7,19 @@
     align-items: center;
 }
 
+
 .anuncio_container {
+    opacity: 90%;
+    background-color: var(--background-color);
     font-size: 18px;
     border: 2px white solid;
     border-radius: 15px;
     padding: 1rem;
     text-align: center;
+    /* opacity: 70%; */
 }
+
+
 
 .canvas_home_container {
     /* width: 100vw; */
